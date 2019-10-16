@@ -22,31 +22,21 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {             
         getActiveSinglePost: (postId) => {
-            dispatch(actions.getSinglePost())
-            getSinglePost(postId).then(resp => {
-                dispatch(actions.getSinglePostSuccess(resp.data))
-            })
+            dispatch(actions.getSinglePost(postId))
         },
         deleteActiveSinglePost: (postId) => {
-            dispatch(actions.deleteSinglePost())
-            deleteSinglePost(postId)
-            getPosts().then(resp => {
-                dispatch(actions.deleteSinglePostSuccess())
-                window.history.back()
-                alert('Delete Success!') 
-            })     
+            dispatch(actions.deleteSinglePost(postId))
+            dispatch(actions.getPosts())
+            window.history.back()
+            alert('Delete Success!')    
         },
         editActiveSinglePost: (title, body) => {
-            dispatch(actions.editSinglePost(title, body))
+            dispatch(actions.beginEditSinglePost(title, body))
         },
         completeEditActiveSinglePost: (postId, title, body) => {
             if(!title || !body) return alert('不可空白唷!')
-            editSinglePost(postId, title, body).then(resp => {
-                getSinglePost(postId).then(resp => {
-                    dispatch(actions.getSinglePostSuccess(resp.data)) // 刷新頁面
-                })
-                dispatch(actions.editSinglePostSuccess())
-            })
+            dispatch(actions.editSinglePost(postId, title, body))
+            dispatch(actions.getSinglePost(postId))
         }
     }
 }

@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => {
         getPostList: () => {
             dispatch(actions.getPosts())
             getRecentPosts().then(resp => {
-                dispatch(actions.getPostsSuccess(resp.data))
+               // dispatch(actions.getPostsSuccess(resp.data))
             })
         }
     }

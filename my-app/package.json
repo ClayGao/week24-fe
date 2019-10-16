@@ -17,6 +17,9 @@
     "react-scripts": "3.1.2",
     "react-syntax-highlighter": "^11.0.2",
     "redux": "^4.0.4",
+    "redux-promise-middleware": "^6.1.1",
+    "redux-promise-middleware-actions": "^3.0.1",
+    "redux-thunk": "^2.3.0",
     "remarkable": "^2.0.0",
     "remarkable-react": "^1.4.1",
     "shallowequal": "^1.1.0"

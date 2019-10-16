@@ -20,15 +20,8 @@ const mapDispatchToProps = dispatch => {
     return {             
         getPostList: () => {
             dispatch(actions.getPosts())
-            getPosts().then(resp => {
-                dispatch(actions.getPostsSuccess(resp.data))
-            })
         }
     }
 }
-
-
-
-
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostListContainer)) 

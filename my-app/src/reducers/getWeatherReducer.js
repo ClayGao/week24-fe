@@ -8,15 +8,15 @@ const initState = {
 
 export default function getWeatherReducer(state = initState, action) {
     switch(action.type) {
-        case actionTypes.GET_WEATHER_DATA:
+        case actionTypes.GET_WEATHER_DATA + '_PENDING':
             return {
                 ...state,
                 isLoadingGetWeatherData: true,
             }
-        case actionTypes.GET_WEATHER_DATA_SUCCESS:
+        case actionTypes.GET_WEATHER_DATA + '_FULFILLED':
             return {
                 ...state,
-                weatherData: action.data,
+                weatherData: action.payload.data,
                 isLoadingGetWeatherData: false
             }
         default:

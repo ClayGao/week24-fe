@@ -15,15 +15,15 @@ const editingContent = {
 
 export function getSinglePostReducer(state = initState, action) {
     switch(action.type) {
-        case actionTypes.GET_SINGLE_POST:
+        case actionTypes.GET_SINGLE_POST  + '_PENDING':
             return {
                 ...state,
                 isLoadingSinglePost: true,
             }
-        case actionTypes.GET_SINGLE_POST_SUCCESS:
+        case actionTypes.GET_SINGLE_POST + '_FULFILLED':
             return {
                 ...state,
-                singlePostData: action.data,
+                singlePostData: action.payload.data,
                 isLoadingSinglePost: false  
             }
         default:
@@ -33,24 +33,30 @@ export function getSinglePostReducer(state = initState, action) {
 
 export function editSinglePostReducer(state = editingContent, action) {
     switch(action.type) {
-        case actionTypes.EDIT_SINGLE_POST:
+        case actionTypes.BEGIN_EDIT_SINGLE_POST:
             return {
                 ...state,
                 isEditing: true,
                 title: action.title,
                 body: action.body
             }
-        case actionTypes.EDIT_SINGLE_POST_SUCCESS:
+        case actionTypes.EDIT_SINGLE_POST + '_PENDING':
             return {
                 ...state,
-                isEditing: false  
+                title: action.title,
+                body: action.body 
             }
-        case actionTypes.DELETE_SINGLE_POST:
+        case actionTypes.EDIT_SINGLE_POST + '_FULFILLED':
             return {
                 ...state,
-                isDeleted: true
+                isEditing: false,
             }
-        case actionTypes.DELETE_SINGLE_POST_SUCCESS:
+        case actionTypes.DELETE_SINGLE_POST  + '_PENDING':
+            return {
+                ...state,
+                isDeleted: true,
+            }
+        case actionTypes.DELETE_SINGLE_POST + '_FULFILLED':
             return {
                 ...state,
                 isDeleted: false

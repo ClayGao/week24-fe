@@ -12,7 +12,7 @@ export const sendSinglePost = (data) => axios.post(url, data)
 
 export const getSinglePost = (listId) => axios.get(url + '/' + listId)
 
-export const editSinglePost = (listId, title, body) => axios.patch(url + '/' + listId,{ title:title, body:body})
+export const editSinglePost = (listId, title, body) => axios.patch(url + '/' + listId,{ title: title, body: body })
 
 export const deleteSinglePost = (listId) => axios.delete(url + '/' + listId)
 
