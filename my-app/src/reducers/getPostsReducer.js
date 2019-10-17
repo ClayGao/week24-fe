@@ -6,7 +6,6 @@ const initState = {
 }
 
 export default function getPostsReducer(state = initState, action) {
-    console.log(action)
     switch(action.type) {
         case actionTypes.GET_POSTS + '_PENDING':
             return {
@@ -14,6 +13,17 @@ export default function getPostsReducer(state = initState, action) {
                 isLoadingGetPosts: true,
             }
         case actionTypes.GET_POSTS + '_FULFILLED' :
+            return {
+                ...state,
+                postListData: action.payload.data,
+                isLoadingGetPosts: false  
+            }
+        case actionTypes.GET_RECENT_POSTS + '_PENDING':
+            return {
+                ...state,
+                isLoadingGetPosts: true,
+            }
+        case actionTypes.GET_RECENT_POSTS + '_FULFILLED' :
             return {
                 ...state,
                 postListData: action.payload.data,

@@ -16,7 +16,7 @@ export default function getWeatherReducer(state = initState, action) {
         case actionTypes.GET_WEATHER_DATA + '_FULFILLED':
             return {
                 ...state,
-                weatherData: action.payload.data,
+                weatherData: action.payload,
                 isLoadingGetWeatherData: false
             }
         default:

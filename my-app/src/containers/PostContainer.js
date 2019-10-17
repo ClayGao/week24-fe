@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
-import { getPosts, getSinglePost, deleteSinglePost, editSinglePost } from '../WebAPI'
 import Post from '../components/post'
 import * as actions from '../actions'
 

@@ -69,8 +69,7 @@ class Nav extends Component {
     render(){
       const currentTime = new Date()
       const {isMove} = this.state
-      const {weatherData} = this.props
-      console.log(weatherData)
+      const {weatherData, isLoadingGetWeatherData} = this.props
       const currentWeather = weatherData.filter(data => (
         currentTime.getHours() >= 12 && currentTime.getHours() < 18) ? 
         data.time ===  '今早' :  data.time ===  '今晚'

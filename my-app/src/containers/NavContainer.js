@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import { getWeather } from '../WebAPI'
+import React from 'react';
 import Nav from '../components/nav'
 import * as actions from '../actions'
 import { connect } from 'react-redux'

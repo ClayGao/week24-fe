@@ -30,7 +30,6 @@ class Home extends Component {
                                 </div>
                             ))}
                     </div>
-                    
                     <div className="page-title">
                         The  Latest  Articles
                     </div>
