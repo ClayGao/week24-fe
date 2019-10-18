@@ -34,7 +34,7 @@ class Nav extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          isMove:false
+          isMove: false
         }
     }
 
@@ -55,8 +55,6 @@ class Nav extends Component {
       return !shallowEqual(this.state.isMove, nextState.isMove)
     }
     
-    
-  
     componentWillUnmount(){
       window.removeEventListener("scroll", this.scroll);
     }
@@ -75,7 +73,7 @@ class Nav extends Component {
         data.time ===  '今早' :  data.time ===  '今晚'
       )
       return (
-        <nav className={isMove ? "window-is-Moving" : "window-UnMoving"}>
+        <nav className={isMove ? "window-is-moving" : "window-unmoving"}>
             <ul>
                 <Tab exact={true} to="/" label="Home" />
                 <Tab to="/about" label="About" />

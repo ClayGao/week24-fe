@@ -16,7 +16,7 @@ a {
 }
 
 /* ----- Nav.js  ----- */
-.window-UnMoving {
+.window-unmoving {
     background-color: transparent;
     position: fixed;
     top: 0;
@@ -34,7 +34,7 @@ a {
             text-align: center;
             outline: none;
             display: inline-block;
-            padding: 12px;
+            padding: 14px;
             &~li {
                 cursor: pointer;
                 margin-left: 8px;
@@ -56,7 +56,7 @@ a {
     }
 }
 
-.window-is-Moving {
+.window-is-moving {
     background-color: $sub-color;
     position: fixed;
     top: 0;
@@ -75,7 +75,7 @@ a {
             text-align: center;
             outline: none;
             display: inline-block;
-            padding: 12px;
+            padding: 14px;
             &~li {
                 cursor: pointer;
                 margin-left: 8px;
@@ -194,9 +194,10 @@ a {
                 line-height: 1.4em;
                 padding: 5px 8px;
                 margin-bottom: 40px;
-                height: 91px;
+                height: 90px;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                transition: 0.4s all;
                 &:hover {
                     color: $font-color;
                 }

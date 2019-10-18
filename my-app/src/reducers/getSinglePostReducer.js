@@ -12,7 +12,6 @@ const editingContent = {
     body: ''
 }
 
-
 export function getSinglePostReducer(state = initState, action) {
     switch(action.type) {
         case actionTypes.GET_SINGLE_POST  + '_PENDING':
