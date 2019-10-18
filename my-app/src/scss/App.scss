@@ -120,7 +120,6 @@ a {
             margin-bottom: 10px;
         }
     }
-
 }
 
 .page-title {
@@ -461,3 +460,153 @@ a {
         }
 }
 
+@media (min-width: 413px) {
+    .date-info {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 2px;
+        li {
+            cursor: text;
+            @include font(16px, white, normal, monospace);
+        }
+    }
+    
+    .wrapper {
+        margin: 0 auto;
+        //min-height: 900px;
+        max-width: 100%;
+        padding: 0;
+        .board {
+            height: auto;
+            max-width: 414px;
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            box-shadow: none;
+            background-color: transparent;
+            .post {
+                cursor: pointer;
+                position: relative;
+                max-width: 300px;
+                border: 3px solid $border-color;
+                transition: 0.25s all;
+                margin: 20px;
+                padding: 30px;
+                box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+                &-title {
+                    @include font(20px, $font-color, bold, monospace);
+                    padding: 5px 8px;
+                    height: 30px;
+                    word-break: break-word;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    transition: 0.3s all;
+                    white-space: nowrap;
+                }
+                &-text {
+                    @include font(13px, $font-color, null, monospace);
+                    line-height: 1.4em;
+                    padding: 5px 8px;
+                    margin-bottom: 20px;
+                    height: 90px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    transition: 0.4s all;
+                }
+                &-editor {  
+                    @include font(13px, $font-color, bold, monospace);
+                    bottom: 25px;
+                    right: 25px;
+                    padding: 5px 8px;
+                    width: 18px;
+                    word-break: break-word;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    .window-unmoving {
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        height: 46px;
+        transition: 0.5s all;
+        width: 100%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        ul {
+            padding: 0;
+            list-style:none;
+            li {
+                @include font(16px, $font-color, bolder, monospace);
+                text-align: center;
+                outline: none;
+                display: inline-block;
+                padding: 14px;
+                &~li {
+                    cursor: pointer;
+                    margin-left: 8px;
+                }
+            } 
+            li.active {
+                transition: 0.5s all;
+                background-color: $sub-color;
+                box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+            }
+            .date-info {
+                position: absolute;
+                right: 15px;
+                li {
+                    cursor: text;
+                    @include font(16px, white, normal, monospace);
+                }
+            }
+        }
+    }
+    
+    .window-is-moving {
+        background-color: $sub-color;
+        position: fixed;
+        top: 0;
+        height: 46px;
+        width: 100%;
+        transition: 0.5s all;
+        z-index: 1;
+        box-shadow: 0px 4px 3px rgba(20%,20%,40%,0.5);
+        display: flex;
+        align-items: center;
+        ul {
+            list-style:none;
+            padding: 0;
+            li {
+                @include font(16px, $font-color, bolder, monospace);
+                text-align: center;
+                outline: none;
+                display: inline-block;
+                padding: 14px;
+                &~li {
+                    cursor: pointer;
+                    margin-left: 8px;
+                }
+            } 
+            li.active {
+                transition: 0.5s all;
+                color: $main-color;
+            }
+            .date-info {
+                position: absolute;
+                right: 15px;
+                li {
+                    cursor: text;
+                    @include font(16px, white, normal, monospace);
+                }
+            }
+        }
+    }
+}
