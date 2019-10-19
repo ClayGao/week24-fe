@@ -27,7 +27,7 @@ const Tab = ({ label, to, exact }) => {
           </li>
         )}
       />
-    );
+    )
   }
 
 class Nav extends Component {
@@ -67,7 +67,7 @@ class Nav extends Component {
     render(){
       const currentTime = new Date()
       const {isMove} = this.state
-      const {weatherData, isLoadingGetWeatherData} = this.props
+      const {weatherData} = this.props
       const currentWeather = weatherData.filter(data => (
         currentTime.getHours() >= 12 && currentTime.getHours() < 18) ? 
         data.time ===  '今早' :  data.time ===  '今晚'

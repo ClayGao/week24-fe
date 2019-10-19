@@ -9,8 +9,7 @@ const NavContainer = props => {
 
 const mapStateToProps = state => {
     return {
-        weatherData: state.getWeatherReducer.weatherData,
-        isLoadingGetWeatherData: state.getWeatherReducer.isLoadingGetWeatherData,
+        weatherData: state.getWeatherReducer.weatherData
     }
 }
 

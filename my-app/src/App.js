@@ -13,11 +13,9 @@ class App extends Component {
       super(props)
   }
 
-  
-
   render() {
       return (
-        <Router basename="/week23-fe/my-app/build">
+        <Router basename="/week24-fe/my-app/build">
           <div className="App">
               <Nav />
               <div className="wrapper"> 

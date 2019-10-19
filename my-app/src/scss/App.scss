@@ -30,7 +30,7 @@ a {
         padding: 0;
         list-style:none;
         li {
-            @include font(16px, $font-color, bolder, monospace);
+            @include font(16px, rgb(168, 82, 33), bolder, monospace);
             text-align: center;
             outline: none;
             display: inline-block;
@@ -43,7 +43,7 @@ a {
         li.active {
             transition: 0.5s all;
             background-color: $sub-color;
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+            box-shadow: 0px 0px 15px black
         }
         .date-info {
             position: absolute;
@@ -64,14 +64,14 @@ a {
     width: 100%;
     transition: 0.5s all;
     z-index: 1;
-    box-shadow: 0px 4px 3px rgba(20%,20%,40%,0.5);
+    box-shadow: 0px 0px 15px black;
     display: flex;
     align-items: center;
     ul {
         list-style:none;
         padding: 0;
         li {
-            @include font(16px, $font-color, bolder, monospace);
+            @include font(16px, rgb(168, 82, 33), bolder, monospace);
             text-align: center;
             outline: none;
             display: inline-block;
@@ -108,22 +108,21 @@ a {
         height:auto;
         width: 300px;
         padding: 30px;
-        box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
-        background-color: rgba(197, 188, 168, 0.1);
+        background-color: rgba(37, 33, 22, 0.4);
         border: 3px solid $border-color;
         margin: 20px;
         h1 {
-            @include font(40px, white,bold, monospace);
+            @include font(40px, rgb(247, 238, 231),bolder, sans-serif);
         }
         p {
-            @include font(16px, white,normal, monospace);
+            @include font(16px, rgb(247, 238, 231),normal, monospace);
             margin-bottom: 10px;
         }
     }
 }
 
 .page-title {
-    @include font(80px, $font-color, null, (Impact, Charcoal, sans-serif));
+    @include font(80px, rgb(29, 28, 27), null, (Impact, Charcoal, sans-serif));
     position: relative;
     height: auto;
     width: 800px;
@@ -131,7 +130,6 @@ a {
     border-right: 3px solid $border-color;
     margin: 20px;
     padding: 10px;
-    box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
 }
 
 /* ----- PostList.js / Home.js  ----- */
@@ -164,19 +162,20 @@ a {
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
-        box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+        box-shadow: 0px 0px 15px black;
         .post {
             cursor: pointer;
             position: relative;
             width: 750px;
             border: 3px solid $border-color;
+            background-color: rgba(37, 33, 22, 0.4);
             transition: 0.25s all;
             margin: 20px;
             padding: 30px;
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
             &:hover {
                 border-color: $sub-color;
-                background-color: rgba(235, 165, 0, 0.2);
+                background-color: rgba(37, 33, 22, 0.8);
+                box-shadow: 0px 0px 10px black;
             }
             &-title {
                 @include font(20px, $font-color, bold, monospace);
@@ -218,7 +217,7 @@ a {
 
 /* -----  About.js ----- */
 .info-page {
-    background-color: rgba(37, 33, 22, 0.1);
+    background-color: rgba(37, 33, 22, 0.8);
     position: relative;
     height: auto;
     width: auto;
@@ -228,12 +227,12 @@ a {
     margin: 20px;
     padding: 60px;
     padding-bottom: 140px;
-    box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+    box-shadow: 0px 0px 15px black;
 }
 
 /* ----- Post.js  ----- */
 .single-post {
-    background-color: rgba(37, 33, 22, 0.1);
+    background-color: rgba(37, 33, 22, 0.8);
     position: relative;
     height: auto;
     width: auto;
@@ -243,10 +242,7 @@ a {
     margin: 20px;
     padding: 60px;
     padding-bottom: 140px;
-    box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
-    &:hover {
-        background-color: rgba(37, 33, 22, 0.8);
-    }
+    box-shadow: 0px 0px 15px black;
     &-title {
         @include font(40px, wheat, bold, monospace);
         padding: 5px 8px;
@@ -307,7 +303,7 @@ a {
                 color: $main-color;
                 background-color: $sub-color
             }
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+            box-shadow: 0px 0px 15px black;
         }
         &-delete {
             margin: 25px;
@@ -331,7 +327,7 @@ a {
             margin-bottom: 60px;
             background-color: transparent;
             border: 0px;
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+            box-shadow: 0px 0px 15px black;
             border: 3px solid $border-color;
             &:focus {
                 background-color: rgba(235, 165, 0, 0.3);
@@ -341,7 +337,7 @@ a {
         @include font(16px, $font-color, null, monospace);
             transition: 0.7s all;
             outline: none;
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+            box-shadow: 0px 0px 15px black;
             resize : none;
             margin-top:16px;
             margin-bottom: 30px;
@@ -382,7 +378,7 @@ a {
     margin: 20px;
     padding: 60px;
     padding-bottom: 100px;
-    box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
+    box-shadow: 0px 0px 15px black;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -395,7 +391,6 @@ a {
             margin-bottom: 60px;
             background-color: transparent;
             border: 0px;
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
             border: 1.5px solid $border-color;
             &:focus {
                 background-color: rgba(235, 165, 0, 0.3);
@@ -412,7 +407,6 @@ a {
             margin-bottom: 60px;
             padding:  5px 20px;
             background-color: transparent;
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
             border: 1.5px solid $border-color;
             &:focus {
                 background-color: rgba(235, 165, 0, 0.3);
@@ -425,7 +419,6 @@ a {
             @include font(16px, $font-color, null, monospace);
             transition: 0.7s all;
             outline: none;
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
             resize : none;
             margin-top:16px;
             margin-bottom: 30px;
@@ -449,7 +442,6 @@ a {
             margin-top:60px;
             transition: 0.4s all;
             outline: none;  
-            box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
             padding: 30px;
             border: 3px solid $border-color;
             background-color: transparent;
@@ -460,153 +452,3 @@ a {
         }
 }
 
-@media (min-width: 413px) {
-    .date-info {
-        display: none;
-        position: absolute;
-        top: 40px;
-        left: 2px;
-        li {
-            cursor: text;
-            @include font(16px, white, normal, monospace);
-        }
-    }
-    
-    .wrapper {
-        margin: 0 auto;
-        //min-height: 900px;
-        max-width: 100%;
-        padding: 0;
-        .board {
-            height: auto;
-            max-width: 414px;
-            display: flex;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: center;
-            box-shadow: none;
-            background-color: transparent;
-            .post {
-                cursor: pointer;
-                position: relative;
-                max-width: 300px;
-                border: 3px solid $border-color;
-                transition: 0.25s all;
-                margin: 20px;
-                padding: 30px;
-                box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
-                &-title {
-                    @include font(20px, $font-color, bold, monospace);
-                    padding: 5px 8px;
-                    height: 30px;
-                    word-break: break-word;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    transition: 0.3s all;
-                    white-space: nowrap;
-                }
-                &-text {
-                    @include font(13px, $font-color, null, monospace);
-                    line-height: 1.4em;
-                    padding: 5px 8px;
-                    margin-bottom: 20px;
-                    height: 90px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    transition: 0.4s all;
-                }
-                &-editor {  
-                    @include font(13px, $font-color, bold, monospace);
-                    bottom: 25px;
-                    right: 25px;
-                    padding: 5px 8px;
-                    width: 18px;
-                    word-break: break-word;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                }
-            }
-        }
-    }
-    .window-unmoving {
-        background-color: transparent;
-        position: fixed;
-        top: 0;
-        height: 46px;
-        transition: 0.5s all;
-        width: 100%;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        ul {
-            padding: 0;
-            list-style:none;
-            li {
-                @include font(16px, $font-color, bolder, monospace);
-                text-align: center;
-                outline: none;
-                display: inline-block;
-                padding: 14px;
-                &~li {
-                    cursor: pointer;
-                    margin-left: 8px;
-                }
-            } 
-            li.active {
-                transition: 0.5s all;
-                background-color: $sub-color;
-                box-shadow: 5px 4px 3px rgba(20%,20%,40%,0.5);
-            }
-            .date-info {
-                position: absolute;
-                right: 15px;
-                li {
-                    cursor: text;
-                    @include font(16px, white, normal, monospace);
-                }
-            }
-        }
-    }
-    
-    .window-is-moving {
-        background-color: $sub-color;
-        position: fixed;
-        top: 0;
-        height: 46px;
-        width: 100%;
-        transition: 0.5s all;
-        z-index: 1;
-        box-shadow: 0px 4px 3px rgba(20%,20%,40%,0.5);
-        display: flex;
-        align-items: center;
-        ul {
-            list-style:none;
-            padding: 0;
-            li {
-                @include font(16px, $font-color, bolder, monospace);
-                text-align: center;
-                outline: none;
-                display: inline-block;
-                padding: 14px;
-                &~li {
-                    cursor: pointer;
-                    margin-left: 8px;
-                }
-            } 
-            li.active {
-                transition: 0.5s all;
-                color: $main-color;
-            }
-            .date-info {
-                position: absolute;
-                right: 15px;
-                li {
-                    cursor: text;
-                    @include font(16px, white, normal, monospace);
-                }
-            }
-        }
-    }
-}
