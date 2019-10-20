@@ -6,23 +6,38 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class Post extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            isEditing: false
+        }
     }
+
 
     componentDidMount() {
         const postId = this.props.match.params.listId
         this.props.getActiveSinglePost(postId)
     }
+
+    componentDidUpdate(prevProps) {
+        const postId = this.props.match.params.listId
+        const { isDeleted, isEdited, history } = this.props
+        if (isDeleted !== prevProps.isDeleted && !isDeleted) {
+            history.push('/list')
+        }
+        if (isEdited !== prevProps.isEdited && !isEdited) {
+            history.push('/list/' + postId)
+        }
+    }
     
     render(){
         const postId = this.props.match.params.listId
+        const { isEditing } = this.state
         const { singlePostData, 
                 isLoadingSinglePost, 
                 deleteActiveSinglePost, 
                 editActiveSinglePost, 
                 completeEditActiveSinglePost, 
-                isEditing,title,
-                body,
-                history } = this.props
+                title,
+                body} = this.props
         return (
             <div  className="board">
                 <div key={singlePostData.id} 
@@ -48,7 +63,8 @@ class Post extends Component {
                     <div className="single-post-editblock">
                         <span className="single-post-editblock-edit" 
                             onClick={() => { 
-                                editActiveSinglePost(singlePostData.title, singlePostData.body) 
+                                this.setState({ isEditing: true })
+                                //editActiveSinglePost(singlePostData.title, singlePostData.body) 
                                 }}>Edit</span>
                         <span to="/list"
                             className="single-post-editblock-delete" 

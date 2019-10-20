@@ -34,20 +34,14 @@ class Nav extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          isMove: false
+          isMove: 0
         }
     }
 
     scroll = () => {
-      if(window.scrollY) {
         this.setState({
-          isMove : true
+          isMove : window.scrollY
         })
-      } else {
-        this.setState({
-          isMove : false
-        })
-      }
     }
   
     

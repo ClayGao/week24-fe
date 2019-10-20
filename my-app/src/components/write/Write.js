@@ -22,31 +22,20 @@ class Write extends Component {
             return
         }
         sendSinglePost(data)
-        .then(
-            this.setState({
-                title:'',
-                author:'',
-                body:''
-            },
-            history.push('/list'),
-            getPosts().then(
-                alert('Push Success! :D') // 這邊應該直接使用 react-router 的導向，這是偷懶的寫法
-            ))   
-        ).catch(error =>{
-            alert('Failed to post, connect admin please :)')
+        this.setState({
+            title:'',
+            author:'',
+            body:''
         })
+        history.push('/list')
+        getPosts()
     }
     
 
     handleInput = (e) => {
-        const inputType = e.target.className
-            if(inputType === "write-article-title") {
-                this.setState({title: e.target.value})
-            } else if (inputType === "write-article-editor") {
-                this.setState({author: e.target.value})
-            } else {
-                this.setState({body: e.target.value})
-            }
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
     
     render(){
@@ -58,9 +47,32 @@ class Write extends Component {
                     Write Something :D
                 </div>
                 <form className="write-article">
-                    Title: <DebounceInput element="input" debounceTimeout={1000} onChange={this.handleInput} placeholder="Enter your title..." type="text" className="write-article-title" value={title} />
-                    Your name: <DebounceInput element="input" debounceTimeout={1000} onChange={this.handleInput} placeholder="Enter your name..." type="text" className="write-article-editor" value={author} />
-                    Content:　<DebounceInput element="textarea" debounceTimeout={800} onChange={this.handleInput} placeholder="Enter something..." className="write-article-text" value={body} />
+                    Title: <DebounceInput 
+                            element="input" 
+                            name="title"
+                            debounceTimeout={1000} 
+                            onChange={this.handleInput} 
+                            placeholder="Enter your title..." 
+                            type="text" 
+                            className="write-article-title" 
+                            value={title} />
+                    Your name: <DebounceInput 
+                                name="author"
+                                element="input" 
+                                debounceTimeout={1000} 
+                                onChange={this.handleInput} 
+                                placeholder="Enter your name..." 
+                                type="text" 
+                                className="write-article-editor" 
+                                value={author} />
+                    Content:　<DebounceInput 
+                                name="body"
+                                element="textarea" 
+                                debounceTimeout={800} 
+                                onChange={this.handleInput} 
+                                placeholder="Enter something..." 
+                                className="write-article-text" 
+                                value={body} />
                     <input className="write-article-button" type="button" onClick={this.handlePostArticle} value="Send" />
                 </form>
             </div>

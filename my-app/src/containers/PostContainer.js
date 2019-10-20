@@ -9,6 +9,7 @@ const PostContainer = props => {
 
 const mapStateToProps = state => {
     return {
+        isEdited: state.editSinglePostReducer.isEdited,
         isDeleted: state.editSinglePostReducer.isDeleted,
         isLoadingSinglePost: state.getSinglePostReducer.isLoadingSinglePost,
         singlePostData: state.getSinglePostReducer.singlePostData,
@@ -25,9 +26,6 @@ const mapDispatchToProps = dispatch => {
         },
         deleteActiveSinglePost: (postId) => {
             dispatch(actions.deleteSinglePost(postId))
-            dispatch(actions.getPosts())
-            window.history.back()
-            alert('Delete Success!')    
         },
         editActiveSinglePost: (title, body) => {
             dispatch(actions.beginEditSinglePost(title, body))
