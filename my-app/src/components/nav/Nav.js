@@ -44,18 +44,19 @@ class Nav extends Component {
         })
     }
   
-    
+    /*
     shouldComponentUpdate(nextProps, nextState){
       return !shallowEqual(this.state.isMove, nextState.isMove)
     }
+    */
     
-    componentWillUnmount(){
-      window.removeEventListener("scroll", this.scroll);
+    componentDidMount() {
+      this.props.getWeatherData()
+      window.addEventListener("scroll", this.scroll);
     }
 
-    componentDidMount() {
-      window.addEventListener("scroll", this.scroll);
-      this.props.getWeatherData()
+    componentWillUnmount(){
+      window.removeEventListener("scroll", this.scroll);
     }
 
     render(){

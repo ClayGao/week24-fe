@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {         
-    getRecentPosts
+    getRecentPosts,
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeContainer))

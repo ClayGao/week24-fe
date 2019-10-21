@@ -17,8 +17,7 @@ export const editSinglePost = (listId, title, body) => axios.patch(url + '/' + l
 export const deleteSinglePost = (listId) => axios.delete(url + '/' + listId)
 
 // 取得天氣 API
-export const getWeather = () => 
-axios.get(`https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/${weatherDataId}?Authorization=${ weatherAuth}&format=JSON`)
+export const getWeather = () => axios.get(`https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/${weatherDataId}?Authorization=${ weatherAuth}&format=JSON`)
 .then(resp => {
     let Weather = []
     let time = ''
