@@ -45,7 +45,7 @@ export function editSinglePostReducer(state = editingContent, action) {
                 ...state,
                 isEdited: true,
                 title: action.title,
-                body: action.body 
+                body: action.body, 
             }
         case actionTypes.EDIT_SINGLE_POST + '_FULFILLED':
             return {

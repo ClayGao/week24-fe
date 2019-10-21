@@ -6,6 +6,7 @@ import Post from './containers/PostContainer'
 import About from './components/about'
 import Write from './components/write'
 import Home from './containers/HomeContainer'
+import ScrollToTop from './ScrollToTop'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -19,13 +20,15 @@ class App extends Component {
           <div className="App">
               <Nav />
               <div className="wrapper"> 
-              <Switch> 
-                  <Route path="/" exact component={Home} />
-                  <Route path="/about" component={About} />
-                  <Route path="/list" exact component={PostList} />
-                  <Route path="/list/:listId" component={Post} />
-                  <Route path="/write" exact component={Write} /> 
-              </Switch>
+              <ScrollToTop>
+                <Switch> 
+                    <Route path="/" exact component={Home} />
+                    <Route path="/about" component={About} />
+                    <Route path="/list" exact component={PostList} />
+                    <Route path="/list/:listId" component={Post} />
+                    <Route path="/write" exact component={Write} /> 
+                </Switch>
+              </ScrollToTop>
               </div>
           </div>
         </Router>

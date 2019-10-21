@@ -33,7 +33,6 @@ const mapDispatchToProps = dispatch => {
         completeEditActiveSinglePost: (postId, title, body) => {
             if(!title || !body) return alert('不可空白唷!')
             dispatch(actions.editSinglePost(postId, title, body))
-            dispatch(actions.getSinglePost(postId))
         }
     }
 }
