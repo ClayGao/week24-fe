@@ -8,7 +8,7 @@ export const getPosts = () => axios.get(url + '?_sort=id&_order=desc')
 
 export const getRecentPosts = () => axios.get(url + '?_sort=id&_order=desc&_limit=3')
 
-export const sendSinglePost = (data) => axios.post(url, data)
+export const createSinglePost = (data) => axios.post(url, data)
 .then(alert('Push Success! :D'))
 .catch(error =>{
     alert('Failed to post, connect admin please :)')

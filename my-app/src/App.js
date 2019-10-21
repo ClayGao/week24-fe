@@ -1,20 +1,15 @@
-import React, {Component,} from 'react';
+import React from 'react';
 import './scss/App.scss';
 import Nav from './containers/NavContainer'
 import PostList from './containers/PostListContainer'
 import Post from './containers/PostContainer'
 import About from './components/about'
-import Write from './components/write'
+import Write from './containers/WriteContainer'
 import Home from './containers/HomeContainer'
 import ScrollToTop from './ScrollToTop'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-class App extends Component {
-  constructor(props) {
-      super(props)
-  }
-
-  render() {
+const App = () => {
       return (
         <Router basename="/week24-fe/my-app/build">
           <div className="App">
@@ -34,6 +29,5 @@ class App extends Component {
         </Router>
       )
   }
-}
 
 export default App;

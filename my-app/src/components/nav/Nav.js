@@ -55,7 +55,7 @@ class Nav extends Component {
 
     componentDidMount() {
       window.addEventListener("scroll", this.scroll);
-      this.props.getWeatherAPI()
+      this.props.getWeatherData()
     }
 
     render(){

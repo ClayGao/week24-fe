@@ -2,7 +2,7 @@ import * as actionTypes from './actionsTypes'
 import * as WebAPI from './WebAPI'
 
 // Action creator
-export const getPosts = () => ({
+export const getPostList = () => ({
     type: actionTypes.GET_POSTS,
     payload: WebAPI.getPosts()
 })
@@ -15,6 +15,11 @@ export const getRecentPosts = () => ({
 export const getSinglePost = (postId) => ({
     type: actionTypes.GET_SINGLE_POST,
     payload: WebAPI.getSinglePost(postId)
+})
+
+export const createSinglePost = (data) => ({
+    type: actionTypes.CREATE_SINGLE_POST,
+    payload: WebAPI.createSinglePost(data)
 })
 
 export const deleteSinglePost = (postId) => ({

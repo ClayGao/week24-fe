@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import { getPosts, sendSinglePost } from '../../WebAPI'
 import { DebounceInput } from 'react-debounce-input';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Write extends Component {
     constructor(props) {
@@ -12,26 +10,25 @@ class Write extends Component {
             body:''
         }
     }
+
+    componentDidUpdate(prevProps) {
+        const { history, isCreated } = this.props
+        if(isCreated !== prevProps.isCreated && !isCreated) {
+            history.push('/list')
+        }
+    }
  
 
     handlePostArticle = () => {
-        const { history } = this.props
         const data = this.state 
-        if (!data.title || !data.author || !data.body) {
-            alert('Write Something :(') 
-            return
-        }
-        sendSinglePost(data)
+        this.props.createSinglePost(data)
         this.setState({
             title:'',
             author:'',
             body:''
         })
-        history.push('/list')
-        getPosts()
     }
     
-
     handleInput = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -40,7 +37,6 @@ class Write extends Component {
     
     render(){
         const {title, author, body} = this.state
-        const {history} = this.props
         return (
             <div  className="board">
                 <div className="page-title">
@@ -50,6 +46,7 @@ class Write extends Component {
                     Title: <DebounceInput 
                             element="input" 
                             name="title"
+                            autoComplete="off"
                             debounceTimeout={1000} 
                             onChange={this.handleInput} 
                             placeholder="Enter your title..." 
@@ -57,8 +54,9 @@ class Write extends Component {
                             className="write-article-title" 
                             value={title} />
                     Your name: <DebounceInput 
-                                name="author"
                                 element="input" 
+                                name="author"
+                                autoComplete="off"
                                 debounceTimeout={1000} 
                                 onChange={this.handleInput} 
                                 placeholder="Enter your name..." 
