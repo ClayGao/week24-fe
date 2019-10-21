@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { DebounceInput } from 'react-debounce-input';
 
 class Write extends Component {

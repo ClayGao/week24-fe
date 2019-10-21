@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
+/* 可以套用在每個需要換頁的部分 */
+
 class ScrollToTop extends Component {
     componentDidUpdate(prevProps) {
         if (this.props.location !== prevProps.location) {

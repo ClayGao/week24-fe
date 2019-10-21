@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import CodeBlock from "../../CodeBlock";
 
@@ -17,7 +17,7 @@ class Post extends Component {
         }
         if (isEdited !== prevProps.isEdited && !isEdited) {
             this.props.getSinglePost(postId)
-            window.scrollTo(0, 0)
+            window.scrollTo(0, 0) // 回到頁面頂端
         }
     }
     
@@ -32,7 +32,7 @@ class Post extends Component {
                 isEditing,
                 body} = this.props
         return (
-            <div  className="board">
+            <div className="board">
                 <div key={singlePostData.id} 
                     className="single-post" > 
                     {!isEditing ? 
@@ -58,8 +58,7 @@ class Post extends Component {
                             onClick={() => { 
                                 beginEditSinglePost(singlePostData.title, singlePostData.body) 
                                 }}>Edit</span>
-                        <span to="/list"
-                            className="single-post-editblock-delete" 
+                        <span className="single-post-editblock-delete" 
                             onClick={() => { 
                                 deleteSinglePost(postId)
                                 }}>Delete</span>
@@ -73,7 +72,7 @@ class Post extends Component {
                         <input className="edit-article-button" type="button" value="Send" onClick={()=>{ editSinglePost(postId, title, body)}} />
                     </form>
                     <div className="single-post-editor">
-                        {"Author: " + (singlePostData.author ? singlePostData.author : "Noname")}
+                        {"Author: " + (singlePostData.author || "Noname")}
                     </div>
                     </>
                     }       

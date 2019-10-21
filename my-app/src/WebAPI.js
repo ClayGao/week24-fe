@@ -8,11 +8,7 @@ export const getPosts = () => axios.get(url + '?_sort=id&_order=desc')
 
 export const getRecentPosts = () => axios.get(url + '?_sort=id&_order=desc&_limit=3')
 
-export const createSinglePost = (data) => axios.post(url, data)
-.then(alert('Push Success! :D'))
-.catch(error =>{
-    alert('Failed to post, connect admin please :)')
-})
+export const createSinglePost = (data) => axios.post(url, data).then(alert('Push Success! :D'))
 
 export const getSinglePost = (listId) => axios.get(url + '/' + listId)
 

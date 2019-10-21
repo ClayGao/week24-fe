@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Post from '../components/post'
-import {getSinglePost, deleteSinglePost, beginEditSinglePost, editSinglePost} from '../actions'
+import { getSinglePost, deleteSinglePost, beginEditSinglePost, editSinglePost } from '../actions'
 
 const PostContainer = props => {
     return <Post {...props} />
